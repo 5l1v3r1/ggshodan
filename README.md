@@ -84,9 +84,9 @@ subdomain:api
 >> unlocked_left:56
 >> telnet:True
 ```
-## TODO
-> improve menu
-> custom path for webdriver module
-> create a template html for screenshoots like aquatone
-> save text of requests
+TODO : 
+ * improve menu
+ * custom path for webdriver module
+ * create a template html for screenshoots like aquatone
+ * save text of requests
 
