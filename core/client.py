@@ -1,10 +1,8 @@
 import requests
-from configparser import SafeConfigParser
-from colorama import Fore, Back, Style
-
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
+from configparser import SafeConfigParser
+from colorama import Fore, Back, Style
 
 parser = SafeConfigParser()
 parser.read("./config.ini")
@@ -68,7 +66,5 @@ class Client():
             for k,v in json_data.items():
                 print(Fore.YELLOW + f">> {k}:{v}")
             print(Fore.RESET)
-            
-
         except (requests.exceptions.Timeout, requests.exceptions.HTTPError) as e:
             print(e)
