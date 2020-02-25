@@ -4,9 +4,11 @@ ggshodan using shodan api to grab subdomains
 ## Requirements
 python3 <= python3.7
 
-*chromium driver (if you need a screenshoot module)
-$ sudo apt install chromium-browser chromium-chromedriver
+*chromium driver (if you need a screenshoot module)*
 
+```bash
+$ sudo apt install chromium-browser chromium-chromedriver
+```
 shodan api key, get one at <https://account.shodan.io/register>
 
 
