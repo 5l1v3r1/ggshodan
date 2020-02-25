@@ -20,6 +20,9 @@ put your shodan api key at the *config.ini*
 git clone https://github.com/t0gu/ggshodan.git
 cd ggshodan
 python3 -m pip install requirements.txt
+
+#or use the install script
+bash install.sh
 ```
 
 
@@ -80,5 +83,10 @@ subdomain:api
 >> monitored_ips:None
 >> unlocked_left:56
 >> telnet:True
-
 ```
+## TODO
+> improve menu
+> custom path for webdriver module
+> create a template html for screenshoots like aquatone
+> save text of requests
+
