@@ -24,4 +24,6 @@ python3.7 main.py -d t0gu.com -st
 python3.7 main.py -d t0gu.com -v
 ```
 
+* the example bellow shows the output with -b flag that shows the banner you can get only the text ;) just remove the -b flag
+
 ![](https://raw.githubusercontent.com/t0gu/ggshodan/master/shodan-search.gif)
