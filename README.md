@@ -25,7 +25,15 @@ python3.7 main.py -d t0gu.com -st
 
 # Verbose mode this include your api key status
 python3.7 main.py -d t0gu.com -v
+
+# Screenshoot module
+python3.7 main.py -d t0gu.com -st -sv
 ```
+
+* Screenshoot module using with -st -sc flag
+
+![](https://raw.githubusercontent.com/t0gu/ggshodan/master/screen_t0gu.gif)
+
 
 * the example bellow shows the output with -b flag that shows the banner you can get only the text ;) just remove the -b flag
 
