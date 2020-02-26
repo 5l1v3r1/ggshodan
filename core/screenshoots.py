@@ -16,6 +16,11 @@ class Screen():
     
   
     def Start(self):
+        try:
+            os.mkdir("screenshoots")
+        except FileExistsError as e:
+            print(e)
+            pass
         self.start_thread()
 
     def lines_of_file(self):   
@@ -40,7 +45,7 @@ class Screen():
                     x = threading.Thread(target=self.start_screnshot, args=(new_line,))
                     threads.append(x)
                     x.start()
-                    print(f"End time: {i}:{self.time}")                   
+                    print(f"End time: {self.time}")                   
         except FileNotFoundError as e:
             print(f">> File not found: {e}")
         
