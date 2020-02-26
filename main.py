@@ -12,6 +12,7 @@ menu.add_argument("-d", "--domain", type=str, required=True, help="[-] Domain to
 menu.add_argument('-v','--verbose', help='Print more data', action='store_true')
 menu.add_argument("-st", '--sub_txt', help="salve subdomains on txt", action='store_true')
 menu.add_argument("-sc", "--screenshot", help="Take screen shoot of all subdomains", action='store_true')
+menu.add_argument("-pd", "--path_driver", type=str ,help="Path for your custom chromedriver default is [/usr/bin/chromedriver]")
 menu.add_argument("--b", help='Shows the banner :D', action='store_true')
 args = menu.parse_args()
 
@@ -22,6 +23,7 @@ verbose = args.verbose
 b = args.b
 text_subdomain = args.sub_txt
 screen = args.screenshot
+pt = args.path_driver
 
 
 if domain == "" or domain == None:
@@ -32,7 +34,7 @@ if screen and not text_subdomain:
     print(Fore.CYAN + f">> {sys.argv[0]} -d t0gu.com -st -sc")
 
 if b:
-    print(f":Author: {__AUTHOR__}:Version:{__VERSION__}:{__TWITTER__}:"+Fore.RED + banner.banner)
+    print(f":Author: {__AUTHOR__}:Version:{__VERSION__}:Twitter:{__TWITTER__}:"+Fore.RED + banner.banner)
     print(Fore.RESET)
 
 if verbose:
@@ -44,19 +46,19 @@ if verbose:
 else:
     if text_subdomain:
         if screen:
-            t = client.Client(domain, text_subdomain=True)
-            t.Subdomain_search()
-            try:
-                os.mkdir("screenshoots")
-            except FileExistsError as e:
-                print(e)
-                pass
-            s = screenshoots.Screen()
-            s.Start()
+            if pt != None:
+                t = client.Client(domain, text_subdomain=True)
+                t.Subdomain_search()
+                s = screenshoots.Screen(path=pt)
+                s.Start()
+            else:
+                t = client.Client(domain, text_subdomain=True)
+                t.Subdomain_search()
+                s = screenshoots.Screen()
+                s.Start()
         else:
             t = client.Client(domain, text_subdomain=True)
             t.Subdomain_search()
-
     else:
         t = client.Client(domain)
         t.Subdomain_search()
